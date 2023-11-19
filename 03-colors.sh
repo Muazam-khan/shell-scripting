@@ -23,5 +23,7 @@ echo -e "\e[35m I am printing MAGENTA color \e[0m"
 
 echo -e "\e[36m I am printing Cyan color \e[0m"
 
+echo -e "\e[32m I am printing Grenn color \e[0m"
+
 # Background + Foregroung
 echo -e "\e[43;34m  I am printng backgrond + foreground \e[0m"
