@@ -17,4 +17,6 @@ echo Line2
 echo Line3 
 
 echo Line4
-echo Line5
+echo Line5 
+
+echo Line6 \n echo Line7 \t echo Line8
