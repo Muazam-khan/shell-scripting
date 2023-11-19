@@ -4,4 +4,7 @@
 
 # $0 has special privilege to print the name of script u r running
 
-echo "Printing script name $0"
+echo "Printing script Name :  $0"
+
+echo "First Argument is : $1 "
+echo "Second Argument is : $2 "
