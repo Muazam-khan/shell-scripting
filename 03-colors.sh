@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Each and every color you see on terminal will have a color code and we need to use that code baesd on our need.
+# Each and every color you see on terminal will have a color code and we need to use that code based on our need.
 
 # Colors       Foreground          Background
 # Red               31                  41
@@ -11,7 +11,7 @@
 # Cyan              36                  46
 
 
-# Syntax to Print COLORS is : 
+# Syntax to Print COLORS is as follows : 
 
 #  echo -e "\e[COLORCODEm I am printing Red color \e[0m"
 
