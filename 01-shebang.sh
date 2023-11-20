@@ -1,7 +1,8 @@
 #!/bin/shell
 
-# Anything that starts with # is referred as a comment.
-# Comments are just for the purpose of humans to make to more verbose.
+# Anything that starts with # is referred to as a comment.
+# Comments are just for the purpose of humans to undersrtand each step and to make code more verbose.
+
 # Shebang Notation
 
 # Shebang Notation : This tells the script with which interpretor this script has to be executed.
@@ -20,3 +21,4 @@ echo Line4
 echo Line5 
 
 echo Line6 
+echo Line7
