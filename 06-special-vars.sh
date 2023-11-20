@@ -25,7 +25,7 @@ echo "Ninth Argument is : $9 "
 #                       $1         $2         $3
 
 echo $0   # Prints Script Name 
-echo $#   # Prints the overall arguments used in the script 
+echo $#   # Prints the no of overall arguments used in the script 
 echo $?   # This prints the exit code of the last command
 
 echo $*   # Prints all the arguments used.
