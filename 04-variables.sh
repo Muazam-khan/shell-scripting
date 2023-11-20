@@ -19,4 +19,4 @@ echo printing the value of a ${a}
 echo printing the value of b ${b}        # ${b} or $b : both of them are same.
 echo "Printing the value of c $c"  
  
-# rm -rf  /data/prod/${CUSTDATA}  == rm -rf /data/prod/
+# rm -rf  /data/prod/${CUSTDATA}  == rm -rf /data/prod/ because if custdate is not found command will try to delete prod dir
