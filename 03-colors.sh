@@ -28,4 +28,4 @@ echo -e "\e[32m I am printing Green color \e[0m"
 # Background + Foreground , "\e[background code;foreground codem then ends as like foreground syntax
 echo -e "\e[43;34m  I am printng backgrond + foreground \e[0m"
 
-echo -e "\e[46;32m I am printing background +foreground colors \e[0m"
+echo -e "\e[45;32m I am printing background Magenta + foreground green \e[0m"
