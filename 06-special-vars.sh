@@ -19,3 +19,4 @@ echo "Tenth Argument is : $10 "
 echo "Elenth Argument is : $11 "
 echo "Twelvth Argument is : $12 "
 echo $#
+echo $?
