@@ -13,7 +13,7 @@
 
 # Syntax to Print COLORS is as follows : 
 
-#  echo -e "\e[COLORCODEm I am printing Red color \e[0m"
+#  echo -e "\e[COLORCODEm I am printing Red color \e[0m"  #first e is to enable special character, \e is for colors syntax
 
 echo -e "\e[31m I am printing Red color \e[0m"
 echo -e "\e[32m I am printing GREEN color \e[0m"
@@ -25,7 +25,7 @@ echo -e "\e[36m I am printing Cyan color \e[0m"
 
 echo -e "\e[32m I am printing Green color \e[0m"
 
-# Background + Foregroung
+# Background + Foreground , "\e[background code;foreground codem then ends as like foreground syntax
 echo -e "\e[43;34m  I am printng backgrond + foreground \e[0m"
 
 echo -e "\e[46;32m I am printing background +foreground colors \e[0m"
