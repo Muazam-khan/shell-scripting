@@ -15,3 +15,5 @@ stat(){
     echo "AVG CPU Utilization in the last 5 min is : $(uptime|awk -F : '{print $NF}'|awk -F ',' '{print $2}')"
     b56 # calling a function from another function
 }
+
+stat
