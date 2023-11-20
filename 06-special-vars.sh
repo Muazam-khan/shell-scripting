@@ -19,4 +19,5 @@ echo "Tenth Argument is : $10 "
 echo "Elenth Argument is : $11 "
 echo "Twelvth Argument is : $12 "
 echo $#
-echo $?
+echo $?  # this cmd prints exit code of last command, if exit code is 0 , it means it was successful.
+echo $*  # prints all arguments used
