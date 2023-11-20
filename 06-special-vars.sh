@@ -1,24 +1,29 @@
-#!/bin/bash
+#!/bin/bash 
 
-# Special Variables are $0 to $9
+# Special Variables are $0 to $9 , $* , $@, $#, $$ 
+a=1000 
 
-# $0 has special privilege to print the name of script u r running
+echo "Value of a is $a"
+echo "Printing Script Name :  $0"
 
-echo "Printing script Name :  $0"
+echo "First Argument is : $1 " 
+echo "Second Argument is : $2 " 
 
-echo "First Argument is : $1 "
-echo "Second Argument is : $2 "
-echo "Third Argument is : $3 "
-echo "Fourth Argument is : $4 "
-echo "Fifth Argument is : $5 "
-echo "Sixth Argument is : $6 "
-echo "Seventh Argument is : $7 "
-echo "Eighth Argument is : $8 "
-echo "Ninth Argument is : $9 "
-echo "Tenth Argument is : $10 "
-echo "Elenth Argument is : $11 "
-echo "Twelvth Argument is : $12 "
-echo $#
+#  bash scriptName.sh  arg1  arg2  arg3
+# bash arg1  arg2  arg3 arg4  arg5  arg6 arg7  arg8  arg9  arg10 
+#        1     2     3    4    5     6    7      8    9      10
+
+#bash scriptName.sh  firstArg   secondArg   thirdArg
+#                       $1         $2         $3
+
+echo $0   # Prints Script Name 
+echo $#   # Prints the overall arguments used in the script 
+echo $?   # This prints the exit code of the last command
+echo $*   # Prints all the arguments used.
+echo $@   # Prints all the arguments used.
+
+# echo "Variables Used In The Script $*"    # $* is going to print the used variables  
+# echo "Variabels used are $@"              # $@ is going to print the used variables  
+
+
 echo $?  # this cmd prints exit code of last command, if exit code is 0 , it means it was successful.
-echo $*  # prints all arguments used
-echo $@
