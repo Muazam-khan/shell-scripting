@@ -1,13 +1,20 @@
 #!/bin/bash 
 
 # Special Variables are $0 to $9 , $* , $@, $#, $$ 
-a=1000 
+a=500 
 
 echo "Value of a is $a"
 echo "Printing Script Name :  $0"
 
 echo "First Argument is : $1 " 
 echo "Second Argument is : $2 " 
+echo "Third Argument is : $3 "
+echo "Fourth Argument is : $4 "
+echo "Fifth Argument is : $5 "
+echo "Sixth Argument is : $6 "
+echo "Seventh Argument is : $7 "
+echo "Eighth Argument is : $8 "
+echo "Ninth Argument is : $9 "
 
 #  bash scriptName.sh  arg1  arg2  arg3
 # bash arg1  arg2  arg3 arg4  arg5  arg6 arg7  arg8  arg9  arg10 
