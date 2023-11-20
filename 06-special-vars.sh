@@ -21,3 +21,4 @@ echo "Twelvth Argument is : $12 "
 echo $#
 echo $?  # this cmd prints exit code of last command, if exit code is 0 , it means it was successful.
 echo $*  # prints all arguments used
+echo $@
