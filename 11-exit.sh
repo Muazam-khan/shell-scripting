@@ -4,7 +4,7 @@
 
 # Below is an example of multi line comment
 
-<<COMMENT
+<<COMMENT  #cap letter here is not important, u can use anyword instead of comment here, << is comment syntax here
 echo "Cloud DEVOPS Training"
 echo "Shell Scripting"
 a=100
