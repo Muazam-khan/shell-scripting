@@ -10,5 +10,7 @@ echo "Shell Scripting"
 a=100
 b=300
 echo $a
-COMMENT
+
 echo $b
+COMMENT
+echo "Value of b is $b
