@@ -13,4 +13,4 @@ echo $a
 
 echo $b
 COMMENT
-echo "Value of b is $b
+echo "Value of b is $b"
