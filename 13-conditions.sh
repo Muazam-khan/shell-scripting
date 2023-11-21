@@ -20,6 +20,6 @@ case $ACTION in
         ;;
     *)
         echo -e "\e[32m Valid options are start-stop-restart only \e[om"
-        echo -e "\e[36m Example usage: \e[om \nbash script.sh start"
+        echo -e "\e[36m Example usage: \e[om \n\t\tbash script.sh start"
         exit 3
 esac         
