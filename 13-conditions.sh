@@ -1,25 +1,32 @@
-#!/bin/bash
+#!/bin/bash 
 
-# conditions help us to execute something only if some factor is True/False
+# Conditions helps us to execure something only if SOME-FACTOR is true or false.
 
-#syntax of case
- ACTION=$1
 
-case $ACTION in
-    start)
-        echo -e "\e[32m Starting shipping service \e[om"
+# Syntax of case 
+
+# case  $var in   
+#     opt1) commands-x ;; 
+#     opt2) commans-y ;; 
+# esac
+
+ACTION=$1                          # $1 refers first command line argument
+
+case $ACTION in 
+    start) 
+        echo -e "\e[32m Starting Shipping Service \e[0m"
         exit 0
-        ;;
-    stop)
-        echo -e "\e[31m Stoppng shipping service \e[om"
+        ;; 
+    stop) 
+        echo -e "\e[31m Stopping Shipping Service \e[0m"
         exit 1
         ;;
-    restart)
-        echo -e "\e[33m Restarting shipping service \e[om"
+    restart) 
+        echo -e "\e[33m Restarting Shipping Service \e[0m"
         exit 2
         ;;
     *)
-        echo -e "\e[32m Valid options are start-stop-restart only \e[om"
-        echo -e "\e[36m Example usage: \e[om \n\t\tbash script.sh start"
+        echo -e "\e[35m Valid Options are start or stop or restart only \e[0m"
+        echo -e "\e[33m  Example Usage: \e[0m \n\t\t bash script.sh start"
         exit 3
-esac         
+esac 
