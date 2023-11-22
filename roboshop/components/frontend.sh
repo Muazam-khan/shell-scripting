@@ -9,10 +9,10 @@ if [ $UID -ne 0 ] ; then
    exit 1
 fi
 
-echo -e *********"\e[31m configuring frontend \e[0m"*******
+echo -e *********"\e[31m configuring $1 \e[0m"*******
 
 echo "Installing Nginx :"
-yum install nginx -y
+yum install nginx -y   > /tmp/$1.log
 # systemctl enable nginx
 # systemctl start nginx
 # curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
