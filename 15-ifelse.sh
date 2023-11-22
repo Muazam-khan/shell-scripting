@@ -13,7 +13,7 @@ elif [ $ACTION == restart ] ; then
    echo -e "\e[33m restarting Shipping Service \e[0m"
    exit 2
 else
-   echo -e "\e[34m Valid options are start-stop-restart only \e[om"
+   echo -e "\e[34m Valid options are start-stop-restart only \e[0m"
    exit 3
 
  fi
