@@ -14,7 +14,7 @@ elif [ $ACTION == restart ] ; then
    exit 2
 else
    echo -e "\e[34m Valid options are start-stop-restart only \e[om"
- exit 3
+   exit 3
 
  fi
 
