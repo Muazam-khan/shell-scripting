@@ -15,5 +15,5 @@
 
 # for loop syntax is for i in the range then semi colon then put do then echo words and $i, type done on next line
 for i in 10 20 30 40 50 ; do 
-    echo "Vaules from the loops are $i"
+    echo "Vaules from the loop are $i"
 done 
