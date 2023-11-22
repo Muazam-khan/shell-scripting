@@ -31,7 +31,7 @@ if condition is ideally available in 3 formats :
     fi 
  
 
-* If expresssion is true, then command-1 will be executed. If the expression is not true, the command-2 will not be executed.
+* If expresssion is true, then command-1 will be executed. If the expression is not true, the command-2 will be executed.
 
 
 3) Else-If 
