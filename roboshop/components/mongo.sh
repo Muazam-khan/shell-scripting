@@ -55,7 +55,7 @@ mongo < catalogue.js &>> $LOGFILE
 mongo < users.js &>> $LOGFILE
 stat $?
 
-echo -e *********"\e[31m $COMPONENT Configuration completed \e[0m"*******
+echo -e *********"\e[34m $COMPONENT Configuration is completed \e[0m"*******
 
 
 
