@@ -22,7 +22,7 @@ if [ $USER_ID -ne 0 ] ; then
 fi
 
 echo -n "Configuring NodeJS Repo: "
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y  &>> ${LOGFILE}
+#yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y  &>> ${LOGFILE}
 stat $?
 
 echo -n "Installing nodejs: "
@@ -39,7 +39,7 @@ else
 fi    
 
 echo -n "Downloading the $COMPONENT schema :"
-curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
+curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 stat $?
 
 echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
