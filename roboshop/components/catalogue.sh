@@ -22,8 +22,7 @@ if [ $USER_ID -ne 0 ] ; then
 fi
 
 echo -n "Configuring NodeJS Repo: "
-# yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-  
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y 
 stat $?
 
 echo -n "Installing nodejs: "
