@@ -38,8 +38,8 @@ else
     echo -e "\e[35m Skipping \e[0m"    
 fi    
 
-echo -n "Downloading the $COMPONENT schema :"
-curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
+echo -n "Downloading the $COMPONENT schema : "
+curl -S -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 stat $?
 
 #echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
