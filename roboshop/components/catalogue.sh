@@ -49,6 +49,7 @@ stat $?
 
 echo -n "Configuring $COMPONENT permissions :"
 mv ${APPUSER_HOME}-main $APPUSER_HOME
+ls -ltr
 chown -R $APPUSER:$APPUSER  $APPUSER_HOME #changing ownership
 chmod -R 770  $APPUSER_HOME #changing permission, app component should be owned by app user
 stat $?
