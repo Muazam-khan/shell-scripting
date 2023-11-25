@@ -39,13 +39,13 @@ else
 fi    
 
 echo -n "Downloading the $COMPONENT schema : "
-curl -S -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
+curl -S -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL  &>> ${LOGFILE}
 stat $?
 
-#echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
-#cd /home/roboshop
-#$ unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
-#stat $?
+echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
+cd /home/roboshop
+$ unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
+stat $?
 
 #echo -n "Configuring $COMPONENT permissions :"
 #mv ${APPUSER_HOME}-main $APPUSER_HOME
