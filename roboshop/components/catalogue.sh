@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE=" /tmp/${COMPONENT}.log"
-$COMPONENT_URL="https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
+$COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 APPUSER_HOME=/home/${APPUSER}/${COMPONENT}
 APPUSER="roboshop"
 
@@ -38,7 +38,7 @@ else
     echo -e "\e[35m Skipping \e[0m"    
 fi    
 
-echo -n "Downloading the $COMPONENT the schema :"
+echo -n "Downloading the $COMPONENT schema :"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $?
 
