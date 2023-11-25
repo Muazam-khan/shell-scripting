@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE=" /tmp/${COMPONENT}.log"
-$COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
+$COMPONENT_URL="https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 APPUSER_HOME=/home/${APPUSER}/${COMPONENT}
 APPUSER="roboshop"
 
@@ -22,7 +22,7 @@ if [ $USER_ID -ne 0 ] ; then
 fi
 
 echo -n "Configuring NodeJS Repo: "
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y 
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y  &>> ${LOGFILE}
 stat $?
 
 echo -n "Installing nodejs: "
