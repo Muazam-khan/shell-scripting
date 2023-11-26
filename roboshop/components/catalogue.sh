@@ -71,11 +71,7 @@ sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.s
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service #from project architect
 stat $?
 
-echo -n "Updating Reverse Proxy: "
-sed -i -e "/$COMPONENT/s/localhost/${COMPONENT}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-stat $?
-
-echo -n "Restarting $COMPONENT servcie : "
+echo -n "Starting $COMPONENT servcie : "
 systemctl daemon-reload &>> $LOGFILE
 systemctl enable $COMPONENT &>> $LOGFILE
 systemctl restart $COMPONENT &>> $LOGFILE
