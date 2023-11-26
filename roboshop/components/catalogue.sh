@@ -58,10 +58,10 @@ chown -R $APPUSER:$APPUSER  $APPUSER_HOME #changing ownership
 chmod -R 770  $APPUSER_HOME #changing permission, app component should be owned by app user
 stat $?
 
-#echo -n "Generating Artifacts :"
-#cd $APPUSER_HOME
-#npm install  &>> $LOGFILE
-#stat $?
+echo -n "Generating Artifacts :"
+cd $APPUSER_HOME
+npm install  &>> $LOGFILE
+stat $?
 
 #echo -n "Enabling $COMPONENT visibility :"
 #sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
