@@ -53,7 +53,6 @@ stat $?
 
 echo -n "Configuring $COMPONENT permissions :"
 mv ${COMPONENT}-main $COMPONENT
-stat $?
 chown -R $APPUSER:$APPUSER  $APPUSER_HOME #changing ownership
 chmod -R 770  $APPUSER_HOME #changing permission, app component should be owned by app user
 stat $?
