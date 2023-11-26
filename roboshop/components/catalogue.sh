@@ -52,7 +52,7 @@ unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
 stat $?
 
 echo -n "Configuring $COMPONENT permissions :"
-mv ${APPUSER_HOME}-main $APPUSER_HOME
+mv ${COMPONENT}-main $COMPONENT
 stat $?
 
 chown -R $APPUSER:$APPUSER  $APPUSER_HOME #changing ownership
