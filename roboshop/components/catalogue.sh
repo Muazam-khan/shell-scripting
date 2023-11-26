@@ -66,4 +66,12 @@ stat $?
 echo -n "Configuring the $COMPONENT systemd file :"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service #sed to replace mongo dns
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service #from project architect
-#stat $?
+stat $?
+
+echo -n "Starting $COMPONENT servcie : "
+systemctl daemon-reload &>> $LOGFILE
+systemctl enable $COMPONENT &>> $LOGFILE
+systemctl restart $COMPONENT &>> $LOGFILE
+stat $?
+
+echo -e *********"\e[31m $COMPONENT Configuration is completed \e[0m"*******
