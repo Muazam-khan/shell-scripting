@@ -46,6 +46,10 @@ echo -n "Downloading the $COMPONENT schema : "
 curl -S -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL  &>> ${LOGFILE}
 stat $?
 
+echo -n "Performing cleanup of $COMPONENT: "
+rm -rf $APPUSER_HOME &>> $LOGFILE
+stat $?
+
 echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
@@ -67,7 +71,11 @@ sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.s
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service #from project architect
 stat $?
 
-echo -n "Starting $COMPONENT servcie : "
+echo -n "Updating Reverse Proxy: "
+sed -i -e "/$COMPONENT/s/localhost/${COMPONENT}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+stat $?
+
+echo -n "Restarting $COMPONENT servcie : "
 systemctl daemon-reload &>> $LOGFILE
 systemctl enable $COMPONENT &>> $LOGFILE
 systemctl restart $COMPONENT &>> $LOGFILE
