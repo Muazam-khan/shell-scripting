@@ -63,6 +63,7 @@ cd $APPUSER_HOME
 npm install  &>> $LOGFILE
 stat $?
 
-#echo -n "Enabling $COMPONENT visibility :"
-#sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+echo -n "Configuring the $COMPONENT systemd file :"
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service #sed to replace mongo dns
+mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service #from project architect
 #stat $?
