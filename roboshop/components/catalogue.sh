@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE=" /tmp/${COMPONENT}.log"
 COMPONENT_URL="https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-APPUSER_HOME="/home/${APPUSER}/${COMPONENT}"
+APPUSER_HOME="home/${APPUSER}/${COMPONENT}"
 APPUSER="roboshop"
 
 stat(){
@@ -49,7 +49,6 @@ stat $?
 
 echo -n "Configuring $COMPONENT permissions :"
 mv ${COMPONENT}-main $COMPONENT
-ls -ltr
 chown -R $APPUSER:$APPUSER  $APPUSER_HOME #changing ownership
 chmod -R 770  $APPUSER_HOME #changing permission, app component should be owned by app user
 stat $?
