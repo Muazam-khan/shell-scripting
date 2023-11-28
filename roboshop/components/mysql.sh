@@ -1,7 +1,7 @@
 #!bin/bash
 
 COMPONENT=mysql
-COMPONENT_URL="https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo"
+COMPONENT_URL="https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo"
 SCHEMA_URL="https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 
 source components/common.sh
@@ -9,11 +9,11 @@ source components/common.sh
 echo -e *********"\e[31m configuring ${COMPONENT} \e[0m"*******
 
 echo -n "Configuring $COMPONENT repo:"
-curl -s -L -o /etc/yum.repos.d/${COMPONENT}.repo  &>> $LOGFILE $COMPONENT_URL
+curl -s -L -o /etc/yum.repos.d/mysql.repo $COMPONENT_URL &>> $LOGFILE 
 stat $?
 
 echo -n "Installing $COMPONENT :"
-yum install ${COMPONENT}-community-server -y &>> $LOGFILE
+yum install mysql-community-server -y &>> $LOGFILE
 stat $?
 
 echo -n "Starting $COMPONENT :"
