@@ -1,14 +1,13 @@
 #!bin/bash
 
 COMPONENT=mysql
-COMPONENT_URL="https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo"
 
 source components/common.sh
 
 echo -e *********"\e[31m configuring ${COMPONENT} \e[0m"*******
 
 echo -n "Configuring $COMPONENT repo:"
-curl -s -L -o /etc/yum.repos.d/mysql.repo $COMPONENT_URL &>> $LOGFILE
+curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo &>> $LOGFILE
 stat $?
 
 echo -n "Installing $COMPONENT :"
