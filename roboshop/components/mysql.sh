@@ -23,7 +23,7 @@ echo -n "Extracting $COMPONENT default root password :"
 DEFAULT_ROOT_PASS=$(sudo grep "temporary password" /var/log/mysqld.log | awk -F " " '{print $NF}')
 stat $?
 
-echo -n "show databses;"| mysql -uroot -pRoboShop@1 &>> $LOGFILE
+echo -n "show databases;"| mysql -uroot -pRoboShop@1 &>> $LOGFILE
 echo -n "Changing $COMPONENT root password :"
 echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'"| mysql --connect-expired-password -uroot -p$DEFAULT_ROOT_PASS &>> $LOGFILE
 stat $?
