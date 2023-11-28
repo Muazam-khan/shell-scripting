@@ -21,4 +21,5 @@ stat $?
 
 echo -n "Extracting $COMPONENT default root password :"
 DEFAULT_ROOT_PASS=$(sudo grep "temporary password" /var/log/mysqld.log | awk -F " " '{print $NF}')
+echo -n "Printing def password: $DEFAULT_ROOT_PASS
 stat $?
