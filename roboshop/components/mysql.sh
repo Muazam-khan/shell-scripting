@@ -30,3 +30,7 @@ if [ $? -ne 0 ]; then
     stat $?
 fi
 
+echo -n "uninstall password validation plugins: "
+echo -n "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 &>> $LOGFILE
+stat $?
+
