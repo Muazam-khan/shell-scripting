@@ -74,6 +74,10 @@ stat(){
 
     }
 
+    JAVA(){
+      echo -n "Installing Maven: "
+    }
+
   NODEJS(){
 
       echo -n "Configuring NodeJS Repo: "
