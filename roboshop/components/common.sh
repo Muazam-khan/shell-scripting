@@ -58,7 +58,7 @@ stat(){
             stat $?
 
             echo -n "Configuring the $COMPONENT systemd file :"            
-            sed -i -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service #sed to replace mongo dns
+            sed -i -e 's/DBHOST/mysql.roboshop.internal/'-e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service #sed to replace mongo dns
             mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service #from project architect
             stat $?
 
@@ -76,6 +76,17 @@ stat(){
 
     JAVA(){
       echo -n "Installing Maven: "
+      curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/maven-java11/install.sh | bash &>> $LOGFILE
+      stat $?
+      CREATE_USER # calls create user function that creates roboshop user
+      DOWNLOAD_AND_EXTRACT
+
+      echo -n "Generating the artifacts: "
+      cd $APPUSER_HOME
+      mvn clean package &>> $LOGFILE# generates the artifacts
+      mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+      stat $?
+      CONFIG_SVC
     }
 
   NODEJS(){
