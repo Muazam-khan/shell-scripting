@@ -2,6 +2,7 @@
 
 COMPONENT=redis
 
+source components/common.sh
 
 echo -n "Configuring $COMPONENT Repo: "
 curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/redis.repo -o /etc/yum.repos.d/${COMPONENT}.repo
