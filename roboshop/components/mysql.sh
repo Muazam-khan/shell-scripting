@@ -13,7 +13,7 @@ curl -s -L -o /etc/yum.repos.d/${COMPONENT}.repo  &>> $LOGFILE $COMPONENT_URL
 stat $?
 
 echo -n "Installing $COMPONENT :"
-yum install mysql-community-server -y &>> $LOGFILE
+yum install ${COMPONENT}-community-server -y &>> $LOGFILE
 stat $?
 
 echo -n "Starting $COMPONENT :"
