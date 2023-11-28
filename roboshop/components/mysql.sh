@@ -40,11 +40,16 @@ if [ $? -eq 0 ]; then
 fi
    
 echo -n "Downloading the $COMPONENT schema :"
-curl -s -L -o /tmp/mysql.zip $SCHEMA_URL &>> $LOGFILE
+curl -s -L -o /tmp/${COMPONENT}.zip $SCHEMA_URL &>> $LOGFILE
 stat $?
 
 echo -n "Extracting $COMPONENT schema :"
-cd /tmp
-unzip ${COMPONENT}.zip
+unzip -o /tmp/${COMPONENT}.zip &>> $LOGFILE # o we use, if file exists, i want to override
+stat $?
+
+echo -n "Injecting $COMPONENT schema :"
 cd ${COMPONENT}-main
-mysql -u root -pRoboShop@1 <shipping.sql
+mysql -u root -pRoboShop@1 <shipping.sql  &>> $LOGFILE
+stat $?
+
+echo -e *********"\e[31m $COMPONENT Configuration is completed \e[0m"*******
