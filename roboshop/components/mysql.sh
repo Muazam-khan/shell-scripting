@@ -9,7 +9,7 @@ source components/common.sh
 echo -e *********"\e[31m configuring ${COMPONENT} \e[0m"*******
 
 echo -n "Configuring $COMPONENT repo:"
-curl -s -L -o /etc/yum.repos.d/mysql.repo  &>> $LOGFILE $COMPONENT_URL
+curl -s -L -o /etc/yum.repos.d/${COMPONENT}.repo  &>> $LOGFILE $COMPONENT_URL
 stat $?
 
 echo -n "Installing $COMPONENT :"
