@@ -46,7 +46,7 @@ stat(){
             echo -n "Extracting ${COMPONENT} : "   #gave echo of extracting bcz unzip is same thing
             cd /home/${APPUSER}
             unzip -o /tmp/${COMPONENT}.zip   &>> $LOGFILE
-            mv /home/${APPUSER}/${COMPONENT}-main /home/${APPUSER}/${COMPONENT}
+            mv ${APPUSER_HOME}-main ${APPUSER_HOME}
             stat $?
     }
     
