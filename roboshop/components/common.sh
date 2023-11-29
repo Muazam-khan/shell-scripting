@@ -84,7 +84,11 @@ stat(){
 
       echo -n "Generating the artifacts: "
       cd $APPUSER_HOME
-      mvn clean package &>> $LOGFILE# generates the artifacts
+      echo "###Printing PWD ####"
+      pwd
+      cd /home/roboshop/shipping
+      ls -ltr
+      mvn clean package &>> $LOGFILE  # generates the artifacts
       mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
       stat $?
 
