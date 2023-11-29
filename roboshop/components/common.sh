@@ -86,7 +86,9 @@ stat(){
       mvn clean package &>> $LOGFILE# generates the artifacts
       mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
       stat $?
+      
       CONFIG_SVC
+      START_SVC
     }
 
   NODEJS(){
