@@ -104,7 +104,6 @@ stat(){
       echo -n "Installing Dependencies: "
       cd $APPUSER_HOME
       pip3 install -r requirements.txt &>> $LOGFILE  # generates the artifacts
-      mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
       stat $?
 
       CONFIG_SVC
