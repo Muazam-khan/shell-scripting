@@ -92,6 +92,26 @@ stat(){
       START_SVC
     }
 
+    PYTHON(){
+      echo -n "Installing Python: "
+      yum install python36 gcc python3-devel -y  &>> $LOGFILE
+      stat $?
+
+      CREATE_USER # calls create user function that creates roboshop user
+
+      DOWNLOAD_AND_EXTRACT
+
+      echo -n "Installing Dependencies: "
+      cd $APPUSER_HOME
+      pip3 install -r requirements.txt &>> $LOGFILE  # generates the artifacts
+      mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+      stat $?
+
+      CONFIG_SVC
+
+      START_SVC
+    }
+
   NODEJS(){
 
       echo -n "Configuring NodeJS Repo: "
