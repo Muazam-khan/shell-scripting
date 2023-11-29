@@ -76,7 +76,7 @@ stat(){
 
     JAVA(){
       echo -n "Installing Maven: "
-      curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/maven-java11/install.sh | bash &>> $LOGFILE
+      curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/maven-java11/install.sh  &>> $LOGFILE
       stat $?
       CREATE_USER # calls create user function that creates roboshop user
       DOWNLOAD_AND_EXTRACT
