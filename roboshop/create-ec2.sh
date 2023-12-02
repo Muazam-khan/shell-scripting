@@ -16,7 +16,7 @@ INSTANCE_TYPE="t3.micro"
 
 create_server(){
     echo -e "******* \e[32m $COMPONENT \e[0m Server Creation In Progress ******* !!!!!!! "
-    PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}}]" | jq ".Instances[].PrivateIpAddress | sed -e 's/"//g')
+    PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}}]" | jq ".Instances[].PrivateIpAddress" | sed -e 's/"//g')
     echo -e "******* \e[32m $COMPONENT \e[0m Server Creation is completed ******* !!!!!!! \n\n"
 
     echo -e  ******* "\e[32m $COMPONENT \e[0m DNS Record Creation In Progress ******* !!!!!!! "
@@ -26,13 +26,15 @@ create_server(){
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json\
     echo -e  ******* "\e[32m $COMPONENT \e[0m DNS Record Creation In Completed ******* !!!!!!! \n\n"
  }
-  # if user supplies all as first argument then all will be created
+  # if user supplies all as first argument then all servers will be created
  if [ "$1" == "all" ]; then
-    for component in frontend mongodb cart user redis shipping payment catalogue mysql rabbitmq payment; do 
-        COMPONENT=$component
-        create_server
-    done    
+
+        for component in mongodb cart user redis shipping payment catalogue mysql frontend rabbitmq payment; do 
+            COMPONENT=$component
+            create_server
+        done    
+
 else
-    create-ec2
+     create-ec2
 fi        
    
