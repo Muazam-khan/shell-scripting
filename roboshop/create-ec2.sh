@@ -38,6 +38,6 @@ create_server(){
         done    
 
 else
-     create-server
+    create-server
 fi        
    
