@@ -29,7 +29,7 @@ create_server(){
   # if user supplies all as first argument then all servers will be created
  if [ "$1" == "all" ]; then
 
-        for component in mongodb cart user redis shipping payment catalogue mysql frontend rabbitmq payment; do 
+        for component in mongodb cart user redis shipping catalogue mysql frontend rabbitmq payment; do 
             COMPONENT=$component
             create_server
         done    
