@@ -22,7 +22,7 @@ create_server(){
     echo -e "******* \e[32m $COMPONENT-$ENV  Server Creation is completed \e[0m******* !!!!!!! \n\n"
 
     echo -e  ******* "\e[32m $COMPONENT-$ENV DNS Record Creation In Progress \e[0m******* !!!!!!! "
-    sed -e "s/COMPONENT/${COMPONENT}/-${ENV}" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > tmp/dns.json
+    sed -e "s/COMPONENT/${COMPONENT}/-${ENV}" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
     
 
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json\
