@@ -9,3 +9,5 @@ source components/common.sh
 JAVA # calling java function
 
 echo -e *********"\e[31m $COMPONENT Configuration is completed \e[0m"*******
+
+set-hostname $COMPONENT
