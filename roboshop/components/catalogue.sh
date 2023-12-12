@@ -10,4 +10,3 @@ NODEJS
 
 echo -e *********"\e[31m $COMPONENT Configuration is completed \e[0m"*******
 
-set-hostname $COMPONENT

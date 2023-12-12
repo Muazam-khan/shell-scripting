@@ -34,4 +34,3 @@ stat $?
 
 echo -e *********"\e[34m $COMPONENT Configuration is completed \e[0m"*******
 
-set-hostname $COMPONENT
